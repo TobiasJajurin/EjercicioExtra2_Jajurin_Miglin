@@ -5,61 +5,63 @@ class Program
     {
         string nombre = "", ciudad = "";
         double peso = 0, velocidad =0, fuerza=0;
-        double diferencia;
+        double diferencia, skill1,skill2;
         int opccion;
         superHeroe superHeroe1 = null , superHeroe2 = null;
 
         opccion = ingresarOpccion ("Ingrese que opccion desea");
-        switch (opccion) 
+        while(opccion!= 4)
         {
-            case 1:
-            IngresoTotalDatos(nombre, ciudad, peso, velocidad, fuerza);
-            superHeroe1 = obtenerSuperheroe(nombre, ciudad, peso, fuerza, velocidad);
-            opccion = ingresarOpccion ("Ingrese que opccion desea");
-            break;
-
-            case 2:
-            IngresoTotalDatos(nombre, ciudad, peso, velocidad, fuerza);
-            superHeroe2 = obtenerSuperheroe(nombre, ciudad, peso, fuerza, velocidad);
-            opccion = ingresarOpccion ("Ingrese que opccion desea");
-            break;
-
-            case 3:
-        if(superHeroe1 != null && superHeroe2 != null)
-        {
-            if (superHeroe1.calcularSkill() > superHeroe2.calcularSkill())
+            switch (opccion) 
             {
-                diferencia = superHeroe1.calcularSkill() - superHeroe2.calcularSkill();
-                if (diferencia <= 30)
-                Console.WriteLine ("Gano el " + superHeroe1.NOMBRE + " Por amplia diferencia");
-                else if (diferencia <= 10)
-                Console.WriteLine ("Gano el " + superHeroe1.NOMBRE + " Fue muy parejo");
+                case 1:
+                IngresoTotalDatos(nombre, ciudad, peso, velocidad, fuerza);
+                superHeroe1 = obtenerSuperheroe(nombre, ciudad, peso, fuerza, velocidad);
+                opccion = ingresarOpccion ("Ingrese que opccion desea");
+                break;
+
+                case 2:
+                IngresoTotalDatos(nombre, ciudad, peso, velocidad, fuerza);
+                superHeroe2 = obtenerSuperheroe(nombre, ciudad, peso, fuerza, velocidad);
+                opccion = ingresarOpccion ("Ingrese que opccion desea");
+                break;
+
+                case 3:
+            if(superHeroe1 != null && superHeroe2 != null)
+            {
+                skill1 = superHeroe1.calcularSkill();
+                skill2 = superHeroe2.calcularSkill();
+                if (skill1 > skill2)
+                {
+                    
+                    diferencia = skill1 - skill2;
+                    if (diferencia <= 30)
+                    Console.WriteLine ("Gano el " + superHeroe1.NOMBRE + " Por amplia diferencia");
+                    else if (diferencia <= 10)
+                    Console.WriteLine ("Gano el " + superHeroe1.NOMBRE + " Fue muy parejo");
+                    else
+                    Console.WriteLine ("Gano el " + superHeroe1.NOMBRE + " No le sobro nada");
+
+                }
+                else if (skill1 < skill2)
+                {
+                    diferencia = skill2 - skill1;
+                    if (diferencia <= 30)
+                    Console.WriteLine ("Gano el " + superHeroe2.NOMBRE + " Por amplia diferencia");
+                    else if (diferencia <= 10)
+                    Console.WriteLine ("Gano el " + superHeroe2.NOMBRE + " Fue muy parejo");
+                    else
+                    Console.WriteLine ("Gano el " + superHeroe2.NOMBRE + " No le sobro nada");
+                }
                 else
-                Console.WriteLine ("Gano el " + superHeroe1.NOMBRE + " No le sobro nada");
+                {
+                    Console.WriteLine ("EMPATARON BINKER");
+                }
+            }
+                opccion = ingresarOpccion ("Ingrese que opccion desea");
+                break;
 
             }
-            else if (superHeroe1.calcularSkill() < superHeroe2.calcularSkill())
-            {
-                diferencia = superHeroe2.calcularSkill() - superHeroe1.calcularSkill();
-                if (diferencia <= 30)
-                Console.WriteLine ("Gano el " + superHeroe2.NOMBRE + " Por amplia diferencia");
-                else if (diferencia <= 10)
-                Console.WriteLine ("Gano el " + superHeroe2.NOMBRE + " Fue muy parejo");
-                else
-                Console.WriteLine ("Gano el " + superHeroe2.NOMBRE + " No le sobro nada");
-            }
-            else
-            {
-                Console.WriteLine ("EMPATARON BINKER");
-            }
-        }
-            opccion = ingresarOpccion ("Ingrese que opccion desea");
-            break;
-
-            case 4:
-            break;
-
-
         }
     }
      public static int ingresarOpccion (string m)
@@ -83,10 +85,12 @@ class Program
     }
      public static string IngresarString (string m)
     { 
+        Console.WriteLine (m);
         return Console.ReadLine();
     }
     public static double ingresarDouble (string m)
     {
+        Console.WriteLine (m);
         return double.Parse(Console.ReadLine());    
     }
     public static double IngresarVelocidad (string m)
