@@ -9,6 +9,23 @@ class Program
         int opccion;
 
         opccion = ingresarOpccion ("Ingrese que opccion desea");
+        switch (opccion) 
+        {
+            case 1:
+            break;
+
+            case 2:
+            break;
+
+            case 3:
+            break;
+
+            case 4:
+            break;
+
+
+
+        }
     }
      public static int ingresarOpccion (string m)
     {
