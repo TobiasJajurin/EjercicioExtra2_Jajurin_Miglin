@@ -24,6 +24,34 @@ class Program
             break;
 
             case 3:
+        if(superHeroe1 != null && superHeroe2 != null)
+        {
+            if (superHeroe1.calcularSkill() > superHeroe2.calcularSkill())
+            {
+                diferencia = superHeroe1.calcularSkill() - superHeroe2.calcularSkill();
+                if (diferencia <= 30)
+                Console.WriteLine ("Gano el " + superHeroe1.NOMBRE + " Por amplia diferencia");
+                else if (diferencia <= 10)
+                Console.WriteLine ("Gano el " + superHeroe1.NOMBRE + " Fue muy parejo");
+                else
+                Console.WriteLine ("Gano el " + superHeroe1.NOMBRE + " No le sobro nada");
+
+            }
+            else if (superHeroe1.calcularSkill() < superHeroe2.calcularSkill())
+            {
+                diferencia = superHeroe2.calcularSkill() - superHeroe1.calcularSkill();
+                if (diferencia <= 30)
+                Console.WriteLine ("Gano el " + superHeroe2.NOMBRE + " Por amplia diferencia");
+                else if (diferencia <= 10)
+                Console.WriteLine ("Gano el " + superHeroe2.NOMBRE + " Fue muy parejo");
+                else
+                Console.WriteLine ("Gano el " + superHeroe2.NOMBRE + " No le sobro nada");
+            }
+            else
+            {
+                Console.WriteLine ("EMPATARON BINKER")
+            }
+        }
             opccion = ingresarOpccion ("Ingrese que opccion desea");
             break;
 
