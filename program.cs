@@ -49,7 +49,7 @@ class Program
             }
             else
             {
-                Console.WriteLine ("EMPATARON BINKER")
+                Console.WriteLine ("EMPATARON BINKER");
             }
         }
             opccion = ingresarOpccion ("Ingrese que opccion desea");

@@ -1,0 +1,5 @@
+C:\Users\psima\Desktop\EjercicioExtra2_Jajurin_Miglin\obj\Debug\net7.0\EjercicioExtra2_Jajurin_Miglin.csproj.AssemblyReference.cache
+C:\Users\psima\Desktop\EjercicioExtra2_Jajurin_Miglin\obj\Debug\net7.0\EjercicioExtra2_Jajurin_Miglin.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\psima\Desktop\EjercicioExtra2_Jajurin_Miglin\obj\Debug\net7.0\EjercicioExtra2_Jajurin_Miglin.AssemblyInfoInputs.cache
+C:\Users\psima\Desktop\EjercicioExtra2_Jajurin_Miglin\obj\Debug\net7.0\EjercicioExtra2_Jajurin_Miglin.AssemblyInfo.cs
+C:\Users\psima\Desktop\EjercicioExtra2_Jajurin_Miglin\obj\Debug\net7.0\EjercicioExtra2_Jajurin_Miglin.csproj.CoreCompileInputs.cache
