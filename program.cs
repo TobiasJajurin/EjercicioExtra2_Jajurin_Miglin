@@ -3,8 +3,6 @@ class Program
 {
     static void Main(string[] args)
     {
-        string nombre = "", ciudad = "";
-        double peso = 0, velocidad =0, fuerza=0;
         double diferencia, skill1,skill2;
         int opccion;
         superHeroe superHeroe1 = null , superHeroe2 = null;
@@ -15,14 +13,12 @@ class Program
             switch (opccion) 
             {
                 case 1:
-                IngresoTotalDatos(nombre, ciudad, peso, velocidad, fuerza);
-                superHeroe1 = obtenerSuperheroe(nombre, ciudad, peso, fuerza, velocidad);
+                superHeroe1 = obtenerSuperheroe();
                 opccion = ingresarOpccion ("Ingrese que opccion desea");
                 break;
 
                 case 2:
-                IngresoTotalDatos(nombre, ciudad, peso, velocidad, fuerza);
-                superHeroe2 = obtenerSuperheroe(nombre, ciudad, peso, fuerza, velocidad);
+                superHeroe2 = obtenerSuperheroe();
                 opccion = ingresarOpccion ("Ingrese que opccion desea");
                 break;
 
@@ -31,6 +27,8 @@ class Program
             {
                 skill1 = superHeroe1.calcularSkill();
                 skill2 = superHeroe2.calcularSkill();
+                Console.WriteLine(skill1);
+                Console.WriteLine(skill2);
                 if (skill1 > skill2)
                 {
                     
@@ -74,15 +72,7 @@ class Program
         } while(op!= 1 && op!= 2 && op!= 3 && op!= 4);
         return op;
     }
-    public static void IngresoTotalDatos (string nombre, string ciudad, double peso, double velocidad, double fuerza)
-    {
-         nombre = IngresarString("Ingrese el nombre del super heroe ");
-         ciudad = IngresarString("Ingrese la ciudad del super heroe ");
-         peso = ingresarDouble("Ingrese el peso del super heroe ");
-         velocidad = IngresarVelocidad ("Ingrese la velocidad del super heroe ");
-         fuerza = IngresarFuerza ("Ingrese la fuerza super heroe ");
-         
-    }
+    
      public static string IngresarString (string m)
     { 
         Console.WriteLine (m);
@@ -100,7 +90,7 @@ class Program
         {
             Console.WriteLine(m);
             velocidad = double.Parse(Console.ReadLine());
-        } while(velocidad < 1 && velocidad > 100);
+        } while(velocidad < 1 || velocidad > 100);
         return velocidad;
     }
     public static double IngresarFuerza (string m)
@@ -110,14 +100,17 @@ class Program
         {
             Console.WriteLine(m);
             fuerza = double.Parse(Console.ReadLine());
-        } while(fuerza < 1 && fuerza > 100);
+        } while(fuerza < 1 || fuerza > 100);
         return fuerza;
     }
-    public static superHeroe obtenerSuperheroe(string nombre, string ciudad, double peso, double fuerza, double velocidad)
+    public static superHeroe obtenerSuperheroe()
     {
-        superHeroe retornoHeroe;
-        retornoHeroe = new superHeroe(nombre, ciudad, peso, fuerza, velocidad);
-        return retornoHeroe;
+        string nombre = IngresarString("Ingrese el nombre del super heroe ");
+        string ciudad = IngresarString("Ingrese la ciudad del super heroe ");
+        double peso = ingresarDouble("Ingrese el peso del super heroe ");
+        double velocidad = IngresarVelocidad ("Ingrese la velocidad del super heroe ");
+        double fuerza = IngresarFuerza ("Ingrese la fuerza super heroe ");
+        return new superHeroe(nombre, ciudad, peso, velocidad, fuerza);
     }
 
 }

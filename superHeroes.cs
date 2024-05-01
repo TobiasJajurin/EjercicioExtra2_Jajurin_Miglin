@@ -17,9 +17,9 @@ class superHeroe {
     public double calcularSkill ()
     {
         Random num = new Random();
-        int numero = num.Next (0,10); 
+        int numero = num.Next (1,11); 
         double skill;
-        skill = (VELOCIDAD * 0.6)+(FUERZA * 0.8) + numero ;
+        skill = VELOCIDAD * 0.6 + FUERZA * 0.8 + numero ;
         return skill;
     }
 }
