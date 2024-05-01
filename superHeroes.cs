@@ -5,7 +5,7 @@ class superHeroe {
     public double FUERZA { get; set; }
     public double VELOCIDAD { get; set; }
 
-    public superHeroe (string nombre = "", string ciudad= "", double peso = 0, double fuerza = 0, double velocidad=0)
+    public superHeroe (string nombre  , string ciudad, double peso , double fuerza , double velocidad)
     {
         NOMBRE = nombre;
         CIUDAD = ciudad;
