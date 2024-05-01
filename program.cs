@@ -29,8 +29,7 @@ class Program
 
                 case 5:
                 cambio = IngresarCambio ("Ingrese que superHeroe quiere cambiar");
-                while (cambio!= 3)
-                {
+        
                 switch(cambio)
                 {
                     case 1:
@@ -47,7 +46,7 @@ class Program
                     superHeroe2.FUERZA = fuerzaCambiada;
                     break;
 
-                }
+                
                 }
                 calcularLucha(superHeroe1, superHeroe2);
                 opccion = ingresarOpccion ("Ingrese que opccion desea");
@@ -64,7 +63,7 @@ class Program
             Console.WriteLine(s);
             op = int.Parse(Console.ReadLine());
 
-        }while (op != 1 && op != 2 && op != 3);
+        }while (op != 1 && op != 2);
         return op;
     }
      public static int ingresarOpccion (string m)
