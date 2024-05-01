@@ -3,10 +3,11 @@ class Program
 {
     static void Main(string[] args)
     {
-        string nombre, ciudad;
-        double peso, velocidad, fuerza;
+        string nombre = "", ciudad = "";
+        double peso = 0, velocidad =0, fuerza=0;
         double diferencia;
         int opccion;
+        superHeroe superHeroe1 = null , superHeroe2 = null;
 
         opccion = ingresarOpccion ("Ingrese que opccion desea");
         switch (opccion) 
@@ -81,7 +82,7 @@ class Program
          
     }
      public static string IngresarString (string m)
-    {
+    { 
         return Console.ReadLine();
     }
     public static double ingresarDouble (string m)
