@@ -33,9 +33,9 @@ class Program
                 {
                     
                     diferencia = skill1 - skill2;
-                    if (diferencia <= 30)
+                    if (diferencia >= 30)
                     Console.WriteLine ("Gano el " + superHeroe1.NOMBRE + " Por amplia diferencia");
-                    else if (diferencia <= 10)
+                    else if (diferencia >= 10)
                     Console.WriteLine ("Gano el " + superHeroe1.NOMBRE + " Fue muy parejo");
                     else
                     Console.WriteLine ("Gano el " + superHeroe1.NOMBRE + " No le sobro nada");
@@ -44,9 +44,9 @@ class Program
                 else if (skill1 < skill2)
                 {
                     diferencia = skill2 - skill1;
-                    if (diferencia <= 30)
+                    if (diferencia >= 30)
                     Console.WriteLine ("Gano el " + superHeroe2.NOMBRE + " Por amplia diferencia");
-                    else if (diferencia <= 10)
+                    else if (diferencia >= 10)
                     Console.WriteLine ("Gano el " + superHeroe2.NOMBRE + " Fue muy parejo");
                     else
                     Console.WriteLine ("Gano el " + superHeroe2.NOMBRE + " No le sobro nada");
