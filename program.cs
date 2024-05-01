@@ -13,11 +13,13 @@ class Program
         {
             case 1:
             IngresoTotalDatos(nombre, ciudad, peso, velocidad, fuerza);
+            superHeroe1 = obtenerSuperheroe(nombre, ciudad, peso, fuerza, velocidad);
             opccion = ingresarOpccion ("Ingrese que opccion desea");
             break;
 
             case 2:
             IngresoTotalDatos(nombre, ciudad, peso, velocidad, fuerza);
+            superHeroe2 = obtenerSuperheroe(nombre, ciudad, peso, fuerza, velocidad);
             opccion = ingresarOpccion ("Ingrese que opccion desea");
             break;
 
@@ -77,6 +79,12 @@ class Program
             fuerza = double.Parse(Console.ReadLine());
         } while(fuerza < 1 && fuerza > 100);
         return fuerza;
+    }
+    public static superHeroe obtenerSuperheroe(string nombre, string ciudad, double peso, double fuerza, double velocidad)
+    {
+        superHeroe retornoHeroe;
+        retornoHeroe = new superHeroe(nombre, ciudad, peso, fuerza, velocidad);
+        return retornoHeroe;
     }
 
 }
